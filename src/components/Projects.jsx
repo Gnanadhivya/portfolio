@@ -108,7 +108,7 @@ export default function Projects() {
         'A highly polished, interactive React application styled with Tailwind CSS, utilizing custom particle backgrounds, light/dark responsive toggles, dynamic timelines, and EmailJS integrations.',
       tags: ['React.js', 'Tailwind CSS', 'Vite', 'EmailJS', 'Lucide Icons'],
       codeLink: 'https://github.com/Gnanadhivya/portfolio',
-      demoLink: 'https://portfolio.vercel.app/', // Points to production link address
+      demoLink: 'https://portfolio-gnanadhivya.vercel.app/', // Points to production link address
       icon: <FolderGit2 className="h-5 w-5 text-white" />,
       image: '/certs/portfolio logo.jpg',
     },
