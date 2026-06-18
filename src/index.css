@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+@theme {
+  /* Set your custom font configuration to Inter */
+  --font-custom: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --animate-floating: floating 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 2s infinite;
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: var(--font-custom);
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism Card Style */
+.hero-card {
+  background: rgba(255, 255, 255, 0.07) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(107, 255, 247, 0.1);
+}
+
+.light .hero-card {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05), 0 0 30px rgba(167, 139, 250, 0.05);
+}
+
+/* Particle effect styles */
+.cube-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  clip-path: inset(0 0 0 0);
+  pointer-events: none;
+}
+
+.cube {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #6bfff7, #fafb63);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(107, 255, 247, 0.5), 0 0 20px rgba(250, 251, 99, 0.3);
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+.cube::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #6bfff7, #fafb63);
+  border-radius: 3px;
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+.light .cube {
+  background: linear-gradient(90deg, #00C4CC 0%, #8B3DFF 100%);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5), 0 0 20px rgba(56, 169, 242, 0.3);
+}
+
+.light .cube::before {
+  background: linear-gradient(90deg, #00C4CC 0%, #8B3DFF 100%);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(105vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Animations and transitions */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Custom transitions and scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B3DFF;
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #00C4CC;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6bfff7;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #8B3DFF;
+}
+
+/* ==================== CHANGE THESE SECTIONS IN YOUR CSS ==================== */
+
+/* Glassmorphism Card Style - Light Mode Variant */
+html.light .hero-card {
+  background: rgba(255, 255, 255, 0.65) !important; /* Made lighter for better readability in light mode */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.04), 0 0 30px rgba(167, 139, 250, 0.03);
+}
+
+/* Particle effect styles - Light Mode Variant */
+html.light .cube {
+  background: linear-gradient(90deg, #00C4CC 0%, #8B3DFF 100%);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5), 0 0 20px rgba(56, 169, 242, 0.3);
+}
+
+html.light .cube::before {
+  background: linear-gradient(90deg, #00C4CC 0%, #8B3DFF 100%);
+}
+
+/* Custom scrollbar - Light Mode Variant */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #00C4CC;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #8B3DFF;
+}
