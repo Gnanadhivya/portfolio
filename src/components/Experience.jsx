@@ -91,6 +91,8 @@ export default function Experience() {
       year: '2025',
       prize: 'Second Prize & Cash Award',
       image: '/certs/mepco.jpeg',
+      stageImage: '/certs/certificate.jpeg',
+      isDualMedia: true,
       details: [
         'Orchestrated a successful inter-college trivia event, Takker Trivia, engaging over 100 participants.',
         'Managed all aspects from question curation and event promotion to logistics and scoring, ensuring a seamless experience.',
@@ -108,9 +110,9 @@ export default function Experience() {
       event: 'National Science Day Drawing Competition',
       year: '2024',
       prize: 'Third Prize (III-Prize)',
-      image: '/certs/Drawing photo.jpeg', // Main preview card thumbnail image
-      stageImage: '/certs/drawing.jpeg', // Second alternative image asset configuration
-      isDualMedia: true, // Special state identifier flag
+      image: '/certs/Drawing photo.jpeg',
+      stageImage: '/certs/drawing.jpeg',
+      isDualMedia: true,
       details: [
         'Awarded 3rd prize out of numerous institutional competitors in the fine arts rendering challenge during National Science Day.',
         'Recognized with an official commemorative shield award and merit certification profile background document.',
@@ -127,7 +129,6 @@ export default function Experience() {
       institution: 'National & Collegiate Competitions',
       event: 'Hackathon Participation',
       year: '2024 - 2026',
-      prize: 'Rapid Prototype Developer',
       image: '/achievements/hackathons.png',
       details: [
         'Participated in multiple national and collegiate hackathons, collaborating in teams of 3-4 to build prototype applications under strict 24-48h constraints.',
@@ -186,19 +187,19 @@ export default function Experience() {
                     <div className="p-6">
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
                         <div>
-                          <h4 className="font-extrabold text-lg text-gray-955 dark:text-white leading-tight">
+                          <h4 className="font-extrabold text-lg text-zinc-900 dark:text-black leading-tight">
                             {intern.role}
                           </h4>
                           <p className="text-[#8B3DFF] dark:text-[#6bfff7] text-sm font-black mt-1">
                             {intern.company}
                           </p>
                         </div>
-                        <span className="inline-flex items-center gap-1 text-xs font-bold text-gray-400 dark:text-gray-450 whitespace-nowrap bg-white dark:bg-black px-2.5 py-1 rounded border border-gray-200 dark:border-gray-800">
+                        <span className="inline-flex items-center gap-1 text-xs font-bold text-gray-600 dark:text-gray-400 whitespace-nowrap bg-white dark:bg-black px-2.5 py-1 rounded border border-gray-200 dark:border-gray-800">
                           <Calendar className="h-3 w-3" /> {intern.duration}
                         </span>
                       </div>
 
-                      <ul className="list-disc pl-5 space-y-2 text-gray-655 dark:text-gray-400 text-sm font-semibold leading-relaxed">
+                      <ul className="list-disc pl-5 space-y-2 text-zinc-800 dark:text-black-300 text-sm font-semibold leading-relaxed">
                         {intern.bullets.map((bullet, bIdx) => (
                           <li key={bIdx}>{bullet}</li>
                         ))}
@@ -210,7 +211,6 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Right: Achievements */}
           <div id="achievements" className="lg:col-span-5 space-y-8 slide-in-right">
             <h3 className="text-2xl font-extrabold italic text-[#8B3DFF] dark:text-[#6bfff7] flex items-center gap-2 mb-6">
               <Trophy className="h-6 w-6" /> Achievements
@@ -243,44 +243,35 @@ export default function Experience() {
                       {ach.prize}
                     </span>
 
-                    <h4 className="font-extrabold text-lg text-gray-955 dark:text-white mb-1">
+                    <h4 className="font-extrabold text-lg text-zinc-900 dark:text-white mb-1">
                       {ach.event}
                     </h4>
-                    <p className="text-xs font-bold text-gray-400 dark:text-gray-450 mb-4">
+                    <p className="text-xs font-bold text-gray-600 dark:text-gray-400 mb-4">
                       {ach.institution} • {ach.year}
                     </p>
 
-                    <ul className="list-disc pl-5 space-y-2 text-gray-655 dark:text-gray-400 text-sm font-semibold leading-relaxed mb-6">
+                    <ul className="list-disc pl-5 space-y-2 text-zinc-800 dark:text-zinc-300 text-sm font-semibold leading-relaxed mb-6">
                       {ach.details.map((detail, dIdx) => (
                         <li key={dIdx}>{detail}</li>
                       ))}
                     </ul>
 
-                    {/* Conditional Action Render Block for Drawing Competition Details */}
-                    {ach.isDualMedia ? (
+                    {/* Conditional Action Render Block for Presentation Modals */}
+                    {ach.isDualMedia && (
                       <div className="flex flex-col sm:flex-row gap-2.5 border-t border-gray-150 dark:border-gray-900 pt-4 mt-4">
                         <button
                           onClick={() => setActiveMedia(ach.image)}
                           className="flex-1 flex items-center justify-center gap-1.5 text-xs font-extrabold px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors cursor-pointer text-[#8B3DFF] dark:text-[#6bfff7]"
                         >
                           <ImageIcon className="h-3.5 w-3.5" />
-                          <span>View Stage Presentation </span>
+                          <span>View Stage Presentation</span>
                         </button>
                         <button
                           onClick={() => setActiveMedia(ach.stageImage)}
                           className="flex-1 flex items-center justify-center gap-1.5 text-xs font-extrabold px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors cursor-pointer text-[#8B3DFF] dark:text-[#6bfff7]"
                         >
                           <ImageIcon className="h-3.5 w-3.5" />
-                          <span> View Certificate & Trophy</span>
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="border-t border-gray-150 dark:border-gray-900 pt-4 mt-4 text-right">
-                        <button
-                          onClick={() => setActiveMedia(ach.image)}
-                          className="inline-flex items-center gap-1 text-xs font-extrabold text-[#8B3DFF] dark:text-[#6bfff7] hover:underline cursor-pointer"
-                        >
-                          <span>Expand Document Proof</span>
+                          <span>View Certificate & Trophy</span>
                         </button>
                       </div>
                     )}
@@ -302,7 +293,6 @@ export default function Experience() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-4xl max-h-[85vh] overflow-hidden flex flex-col items-center rounded-2xl bg-black/40 border border-zinc-800 p-1 shadow-2xl"
           >
-            {/* Upper floating close wrapper */}
             <button
               onClick={() => setActiveMedia(null)}
               className="absolute top-4 right-4 text-white bg-black/60 hover:bg-black/80 backdrop-blur-sm p-2 rounded-full transition-colors z-20 cursor-pointer border border-white/10"
@@ -313,7 +303,7 @@ export default function Experience() {
 
             <img 
               src={activeMedia} 
-              alt="Achievement media visual asset presentation proof" 
+              alt="Achievement proof verification preview" 
               className="max-w-full max-h-[80vh] object-contain rounded-xl"
               onError={(e) => {
                 e.target.style.display = 'none';
