@@ -9,7 +9,7 @@ export default function Footer() {
           &copy; {currentYear === 2026 ? '2026' : `2026 - ${currentYear}`} Gnanadhivya G. All rights reserved.
         </p>
         <p className="mt-2 text-xs text-gray-450 dark:text-gray-500">
-          Built with  React, Tailwind CSS, and Modern AI Technologies.
+          Built with  Modern AI Technologies.
         </p>
       </div>
     </footer>
