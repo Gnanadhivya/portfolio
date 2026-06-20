@@ -157,7 +157,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Phone */}
+              {/* Phone
               <div className="flex items-center">
                 <div className="bg-green-100 dark:bg-green-955 p-4 rounded-full mr-4 flex-shrink-0 text-green-600 dark:text-green-400">
                   <Phone className="h-6 w-6" />
@@ -171,7 +171,7 @@ export default function Contact() {
                     +91 8667538259
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               {/* Location */}
               <div className="flex items-center">

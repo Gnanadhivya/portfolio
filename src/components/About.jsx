@@ -84,7 +84,7 @@ export default function About() {
                 <GraduationCap className="h-6 w-6" /> CAREER OBJECTIVE
               </h3>
               <p className="text-base sm:text-lg leading-relaxed font-medium">
-                Aspiring Software Developer with strong knowledge in Java, OOP concepts, and Data Structures & Algorithms. Experienced in developing full-stack applications using Spring Boot, React, and MySQL. Demonstrates strong problem-solving ability through consistent DSA practice and real-world project development. Eager to contribute to scalable and efficient software solutions.
+                Aspiring Software Developer with foundation in Java,Data analytics, OOP concepts, and Data Structures & Algorithms. Experienced in developing full-stack applications using Spring Boot, React, and MySQL. Demonstrates strong problem-solving ability through consistent DSA practice and real-world project development. Eager to contribute to scalable and efficient software solutions.
               </p>
             </div>
 

@@ -81,10 +81,10 @@ export default function Projects() {
       description:
         'Designed biodegradable food packaging using natural waste materials and sustainable processing methods. Proposed low-cost rural-friendly packaging solution with environmental benefits.',
       tags: ['Sustainable Design', 'Bio-materials', 'MSME Innovation', 'Research'],
-      codeLink: null,
-      demoLink: null, // Set link string if a research site goes live
+      // codeLink: null,
+      // demoLink: null, // Set link string if a research site goes live
       icon: <Leaf className="h-5 w-5 text-white" />,
-      image: '/project-screens/nutripack.png',
+       image: '/project-screens/nutripack.png',
     },
     {
       id: 'cyberbullying',
@@ -108,7 +108,7 @@ export default function Projects() {
         'A highly polished, interactive React application styled with Tailwind CSS, utilizing custom particle backgrounds, light/dark responsive toggles, dynamic timelines, and EmailJS integrations.',
       tags: ['React.js', 'Tailwind CSS', 'Vite', 'EmailJS', 'Lucide Icons'],
       codeLink: 'https://github.com/Gnanadhivya/portfolio',
-      demoLink: 'https://portfolio.vercel.app/', // Points to production link address
+      demoLink: 'https://portfolio-gnanadhivya.vercel.app/', // Points to production link address
       icon: <FolderGit2 className="h-5 w-5 text-white" />,
       image: '/certs/portfolio logo.jpg',
     },

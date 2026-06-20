@@ -77,8 +77,8 @@ export default function Hero() {
               
               {/* Replaced 'Get In Touch' button with Resume Link Action */}
               <a
-                href="/resume.pdf"
-                download="Gnanadhivya_Resume.pdf"
+                href="/Gnanadhivya_resume.pdf"
+                download="Gnanadhivya_resume.pdf"
                 className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold transition-all duration-350 cursor-pointer bg-gradient-to-r from-[#fafb63] to-[#f0f14a] dark:from-[#fafb63] dark:to-[#f0f14a] light:from-[#38a9f2] light:to-[#2563eb] text-black dark:text-black light:text-white shadow-md hover:shadow-yellow-400/20 hover:-translate-y-0.5"
               >
                 <Download className="h-4 w-4" />
